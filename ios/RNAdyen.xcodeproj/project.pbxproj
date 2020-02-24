@@ -18,6 +18,9 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RNAdyenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNAdyenTests.m */; };
 		5D5B2CBE5BE4547986376C78 /* libPods-RNAdyen-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D4C4726A02E97FBD06D802 /* libPods-RNAdyen-tvOSTests.a */; };
+		908E696824045C2400CFD12E /* RNAdyenEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 908E696724045C2400CFD12E /* RNAdyenEventEmitter.m */; };
+		908E696B24045C9300CFD12E /* RNAdyenEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 908E696A24045C9300CFD12E /* RNAdyenEncryptor.m */; };
+		908E696D24045CA700CFD12E /* EncryptedCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908E696C24045CA700CFD12E /* EncryptedCardData.swift */; };
 		90C68FEF2404597700A266F6 /* AdyenEncryptorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C68FEE2404597700A266F6 /* AdyenEncryptorWrapper.swift */; };
 		9120F794DF5B9A70CBFB4673 /* libPods-RNAdyen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AE9E284E7AABDC9EDFC0F4 /* libPods-RNAdyen.a */; };
 		B4B145257C1F6CC24D478884 /* libPods-RNAdyen-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAB69D41677008BE4EB78F4 /* libPods-RNAdyen-tvOS.a */; };
@@ -61,6 +64,11 @@
 		75C0849ADA0A96FDBC214960 /* libPods-RNAdyenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNAdyenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810FAF833AE80BFC44637B9D /* Pods-RNAdyen-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAdyen-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RNAdyen-tvOS/Pods-RNAdyen-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		836587DCE7E5FDB8CC9EEBF9 /* Pods-RNAdyenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAdyenTests.release.xcconfig"; path = "Target Support Files/Pods-RNAdyenTests/Pods-RNAdyenTests.release.xcconfig"; sourceTree = "<group>"; };
+		908E696624045C2400CFD12E /* RNAdyenEventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAdyenEventEmitter.h; sourceTree = "<group>"; };
+		908E696724045C2400CFD12E /* RNAdyenEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAdyenEventEmitter.m; sourceTree = "<group>"; };
+		908E696924045C9300CFD12E /* RNAdyenEncryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAdyenEncryptor.h; sourceTree = "<group>"; };
+		908E696A24045C9300CFD12E /* RNAdyenEncryptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAdyenEncryptor.m; sourceTree = "<group>"; };
+		908E696C24045CA700CFD12E /* EncryptedCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCardData.swift; sourceTree = "<group>"; };
 		90C68FED2404597600A266F6 /* RNAdyen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNAdyen-Bridging-Header.h"; sourceTree = "<group>"; };
 		90C68FEE2404597700A266F6 /* AdyenEncryptorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdyenEncryptorWrapper.swift; sourceTree = "<group>"; };
 		B4367DAD7B9557FBC5C16AF6 /* Pods-RNAdyen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAdyen.debug.xcconfig"; path = "Target Support Files/Pods-RNAdyen/Pods-RNAdyen.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +199,8 @@
 		90C68FEB240458FD00A266F6 /* RNAdyenEventEmitter */ = {
 			isa = PBXGroup;
 			children = (
+				908E696624045C2400CFD12E /* RNAdyenEventEmitter.h */,
+				908E696724045C2400CFD12E /* RNAdyenEventEmitter.m */,
 			);
 			path = RNAdyenEventEmitter;
 			sourceTree = "<group>";
@@ -199,6 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				90C68FEE2404597700A266F6 /* AdyenEncryptorWrapper.swift */,
+				908E696924045C9300CFD12E /* RNAdyenEncryptor.h */,
+				908E696A24045C9300CFD12E /* RNAdyenEncryptor.m */,
+				908E696C24045CA700CFD12E /* EncryptedCardData.swift */,
 			);
 			path = RNAdyenEncryptor;
 			sourceTree = "<group>";
@@ -590,8 +603,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908E696B24045C9300CFD12E /* RNAdyenEncryptor.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				908E696824045C2400CFD12E /* RNAdyenEventEmitter.m in Sources */,
 				90C68FEF2404597700A266F6 /* AdyenEncryptorWrapper.swift in Sources */,
+				908E696D24045CA700CFD12E /* EncryptedCardData.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +711,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = RNAdyen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -718,6 +735,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = RNAdyen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
